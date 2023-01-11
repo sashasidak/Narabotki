@@ -1,6 +1,5 @@
 package General;
 
-import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.Duration;
@@ -66,16 +65,12 @@ public class TestBase {
         profileSettingsPage = new ProfileSettingsPage(driver);
         actions = new Actions(driver);
 
-        WebDriverWait wait = new WebDriverWait ( driver, 45 );
-        wait.until ( ExpectedConditions.elementToBeClickable ( By.id ( "ua.com.abank:id/etPhoneNumber" ) ) );
-        onboardingElements.phoneNumberField.sendKeys ( "638389626" );
-        wait.until ( ExpectedConditions.elementToBeClickable ( onboardingElements.TwoPinButton ) );
-
+        onboardingElements.TwoPinButton.isDisplayed();
         onboardingElements.TwoPinButton.click();
         onboardingElements.FivePinButton.click();
         onboardingElements.EightPinButton.click();
         onboardingElements.ZeroPinButton.click();
-        wait.until(ExpectedConditions.elementToBeClickable(mainScreenElements.CardSettingButton));
+        mainScreenElements.walletNavBar.isDisplayed();
     }
 
     public void firstAuth() throws MalformedURLException, InterruptedException {
@@ -84,26 +79,22 @@ public class TestBase {
         mainScreenElements = new MainScreenElements(driver);
 
         WebDriverWait wait = new WebDriverWait(driver, 45);
-//        wait.until(ExpectedConditions.elementToBeClickable(By.id("ua.com.abank:id/etPhoneNumber")));
-//        onboardingElements.phoneNumberField.sendKeys("638389626");
-//        wait.until(ExpectedConditions.elementToBeClickable(onboardingElements.TwoPinButton));
-
+        onboardingElements.titleEnterPhone.isDisplayed();
+        onboardingElements.phoneNumberField.clear();
+        onboardingElements.phoneNumberField.sendKeys ( "507061794" );
+        onboardingElements.nextButtonOnTheKeyboard.isDisplayed();
+        onboardingElements.nextButtonOnTheKeyboard.click();
+        onboardingElements.TwoPinButton.isDisplayed();
         onboardingElements.TwoPinButton.click();
-        Thread.sleep(1000);
-//        onboardingElements.FivePinButton.click();
-//        onboardingElements.EightPinButton.click();
-//        onboardingElements.ZeroPinButton.click();
-//
-//        if (isOtp()) {
-//            wait.until(ExpectedConditions.elementToBeClickable(onboardingElements.FirstOtpNumber));
-//            onboardingElements.FirstOtpNumber.sendKeys("7");
-//            onboardingElements.SecondOtpNumber.sendKeys("1");
-//            onboardingElements.ThirdOtpNumber.sendKeys("7");
-//            onboardingElements.FourthOtpNumber.sendKeys("2");
-////			onboardingElements.NextButtonAfterOtp.click(); не нужно поскольку сейчас после ввода сразу редиректит внутрь
-//            wait.until(ExpectedConditions.elementToBeClickable(mainScreenElements.CardSettingButton));
-//        }
-
+        onboardingElements.FivePinButton.click();
+        onboardingElements.EightPinButton.click();
+        onboardingElements.ZeroPinButton.click();
+        wait.until(ExpectedConditions.elementToBeClickable(onboardingElements.FirstOtpNumber));
+        onboardingElements.FirstOtpNumber.click();
+        onboardingElements.SecondOtpNumber.click();
+        onboardingElements.ThirdOtpNumber.click();
+        onboardingElements.FourthOtpNumber.click();
+        mainScreenElements.walletNavBar.isDisplayed();
     }
 
     @Step

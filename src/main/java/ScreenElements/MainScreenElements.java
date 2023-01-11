@@ -1,6 +1,7 @@
 package ScreenElements;
 
 import General.TestBase;
+import io.appium.java_client.pagefactory.iOSXCUITFindBy;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.PageFactory;
 import io.appium.java_client.AppiumDriver;
@@ -13,6 +14,8 @@ public class  MainScreenElements extends TestBase {
         PageFactory.initElements(new AppiumFieldDecorator(driver), this);
     }
 
+    @iOSXCUITFindBy(accessibility="ic_ab_wallet")
+    public MobileElement walletNavBar;
     @AndroidFindBy(id="ua.com.abank:id/ivCardSetting")
     public MobileElement CardSettingButton;
 
