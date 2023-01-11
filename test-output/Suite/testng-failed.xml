@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <listeners>
+    <listener class-name="utils1.TestAllureListener"/>
+  </listeners>
+  <test thread-count="5" name="checkcardReissue(failed)">
+    <classes>
+      <class name="AllureTests.AllureReissueCardTest">
+        <methods>
+          <include name="checkcardReissue"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- AllureTests.AllureReissueCardTest -->
+    </classes>
+  </test> <!-- checkcardReissue(failed) -->
+</suite> <!-- Failed suite [Suite] -->
