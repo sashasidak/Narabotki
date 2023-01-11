@@ -181,14 +181,14 @@ public class AllureReissueCardTest extends TestBase {
             onboardingElements.SecondOtpNumber.sendKeys("1");
             onboardingElements.ThirdOtpNumber.sendKeys("7");
             onboardingElements.FourthOtpNumber.sendKeys("2");
-            onboardingElements.NextButtonAfterOtp.click();
+            onboardingElements.nextButton.click();
         }
 
         onboardingElements.TwoPinButton.click();
         onboardingElements.FivePinButton.click();
         onboardingElements.EightPinButton.click();
         onboardingElements.ZeroPinButton.click();
-        onboardingElements.NextButtonAfterOtp.click();
+        onboardingElements.nextButton.click();
     }
 
 
