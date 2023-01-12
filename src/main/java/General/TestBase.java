@@ -6,6 +6,7 @@ import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import DepositsScreenElements.DepositsPage;
 import ScreenElements.*;
+import UserSettingsElements.UserSettingsPage;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.ios.IOSDriver;
@@ -29,6 +30,7 @@ public class TestBase {
     public OnboardingElements onboardingElements;
     public MainScreenElements mainScreenElements;
     public DepositsPage depositsPage;
+    public UserSettingsPage userSettingsPage;
     public Actions actions;
     public ProfileSettingsPage profileSettingsPage;
     public CardSwipe cardSwipe;
@@ -60,6 +62,7 @@ public class TestBase {
         mainScreenElements = new MainScreenElements(driver);
         depositsPage = new DepositsPage(driver);
         cardSettingsPage = new CardSettingsPage(driver);
+        userSettingsPage = new UserSettingsPage(driver);
         reissueVirtualCardModule = new ReissueVirtualCardModule(driver);
         cardSwipe = new CardSwipe();
         profileSettingsPage = new ProfileSettingsPage(driver);

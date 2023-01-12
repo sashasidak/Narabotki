@@ -22,7 +22,7 @@ public class  MainScreenElements extends TestBase {
     @AndroidFindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.LinearLayout/android.widget.FrameLayout/android.view.ViewGroup/android.widget.TextView[2]")
     public MobileElement CardNumberField;
 
-    @AndroidFindBy(id="ua.com.abank:id/ivAvatar")
+    @iOSXCUITFindBy(iOSClassChain="**/XCUIElementTypeWindow/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther[1]/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeOther/XCUIElementTypeButton[2]")
     public MobileElement AvatarSettingsButton;
 
     @AndroidFindBy(id="ua.com.abank:id/thirdItem")
@@ -31,6 +31,10 @@ public class  MainScreenElements extends TestBase {
     @Step("Переход в депозиты")
     public void goToDeposits() {
         DepositsButton.click();
+    }
+    @Step("Переход в настройки пользователя")
+    public void openUserSettings()  {
+        AvatarSettingsButton.click();
     }
 }
 
