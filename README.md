@@ -11,6 +11,8 @@
 + **Appium** - фреймворк для тестирования моб приложений
 + **Java** - обертка IOSdriver
 + **Visual-Regression-Tracker** - тестирование UI компонентов с помощью сравнения скриншотов
+Инструкция по установке: 
+https://github.com/Visual-Regression-Tracker/Visual-Regression-Tracker
 
 
 
