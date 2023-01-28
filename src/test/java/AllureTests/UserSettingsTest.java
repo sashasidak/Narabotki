@@ -3,6 +3,7 @@ package AllureTests;
 import General.TestBase;
 import org.testng.annotations.Test;
 
+import java.io.IOException;
 import java.net.MalformedURLException;
 
 public class UserSettingsTest extends TestBase {
@@ -14,7 +15,7 @@ public class UserSettingsTest extends TestBase {
     }
 
     @Test(description="Кнопка \"Помощь\" в меню профиль, в меню персональные данные, и в меню тарифы и правила")
-    public void checkHelpButton() throws MalformedURLException {
+    public void checkHelpButton() throws IOException, InterruptedException {
         reAuth();
         mainScreenElements.openUserSettings();
         userSettingsPage.checkHelpButton();
@@ -25,6 +26,7 @@ public class UserSettingsTest extends TestBase {
         userSettingsPage.pressBack();
         userSettingsPage.goToRate();
         userSettingsPage.checkHelpButton();
+        vrtHelper.track("Скрин элементов профиля");
     }
 
 }

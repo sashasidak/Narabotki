@@ -19,6 +19,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
+import utils.VRTHelper;
 
 import static io.appium.java_client.remote.MobileCapabilityType.*;
 import static org.openqa.selenium.remote.CapabilityType.PLATFORM_NAME;
@@ -32,6 +33,7 @@ public class TestBase {
     public DepositsPage depositsPage;
     public UserSettingsPage userSettingsPage;
     public Actions actions;
+    public VRTHelper vrtHelper;
     public ProfileSettingsPage profileSettingsPage;
     public CardSwipe cardSwipe;
     public CardSettingsPage cardSettingsPage;
@@ -45,9 +47,9 @@ public class TestBase {
         cap.setCapability("automationName", "XCUITest");
         cap.setCapability(PLATFORM_VERSION, "16");
         cap.setCapability(PLATFORM_NAME, "iOS");
-        cap.setCapability(UDID, "00008020-001814402E05002E");
+        cap.setCapability(UDID, "*****");
         cap.setCapability("autoAcceptAlerts", true);
-        cap.setCapability("bundleId", "com.abank24.mobapplication");
+        cap.setCapability("bundleId", "******");
         cap.setCapability("newCommandTimeout", 10000);
         driver = new IOSDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), cap);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -67,6 +69,7 @@ public class TestBase {
         cardSwipe = new CardSwipe();
         profileSettingsPage = new ProfileSettingsPage(driver);
         actions = new Actions(driver);
+        vrtHelper = new VRTHelper();
 
         onboardingElements.TwoPinButton.isDisplayed();
         onboardingElements.TwoPinButton.click();

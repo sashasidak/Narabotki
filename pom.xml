@@ -26,6 +26,12 @@
     <version>6.13.1</version>
 </dependency>
 
+      <dependency>
+          <groupId>com.github.Visual-Regression-Tracker</groupId>
+          <artifactId>sdk-java</artifactId>
+          <version>4.5.3</version>
+      </dependency>
+
 <dependency>
     <groupId>javax.xml.bind</groupId>
     <artifactId>jaxb-api</artifactId>
@@ -60,6 +66,13 @@
 </dependency>
 
   </dependencies>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
